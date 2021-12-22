@@ -13,6 +13,9 @@ router.post("/login", userController.loginUser)
 
 //Book Routes
 router.post("/createbook", mid.userAuth, bookController.createbook)
+
+router.post("/write-file-aws", bookController.coverBook)
+
 router.get("/books", mid.userAuth, bookController.getBooksByFilter)
 router.get("/books/:bookId", mid.userAuth, bookController.getBooksByID)
 router.put("/books/:bookId", mid.userAuth, bookController.updateBookWithNewFeatures)
